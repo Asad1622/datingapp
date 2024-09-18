@@ -1,14 +1,91 @@
 .gradient-background {
-  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
-  background-size: 180% 180%;
-  animation: gradient-animation 18s ease infinite;
+  width: 100%; 
+  height: 100%;
+  background: #BE1E2D;
+  overflow: hidden;
 }
+
+.heart {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  opacity: 0;
+  animation-name: radiate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-fill-mode: backwards;
+}
+
+.heart path {
+  fill: #fff;
+}
+
+.heart:nth-child(1) {
+  animation-delay: -1s;
+}
+.heart:nth-child(2) {
+  animation-delay: -2s;
+}
+.heart:nth-child(3) {
+  animation-delay: -3s;
+}
+.heart:nth-child(4) {
+  animation-delay: -4s;
+}
+.heart:nth-child(5) {
+  animation-delay: -5s;
+}
+
+@keyframes radiate {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  1% {
+    opacity: 0.15;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+.heart path {
+  animation: 5s x infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes x {
+  0% {
+    transform:scale(1)
+  }
+  10% {
+    transform: scale(0.95)
+  }
+  40% {
+    transform: scale(1)
+  }
+  60% {
+    transform: scale(0.95)
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .nav-link {
   position: relative;
   display: inline-block;
-  color: #333; /* Text color for links */
+  color: #333;
   text-decoration: none;
-  padding: 0.5rem 1rem; /* Padding for the links */
+  padding: 0.5rem 1rem;
 }
 
 .nav-link::after {
@@ -17,19 +94,18 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 2px; /* Height of the underline */
-  background: linear-gradient(90deg, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1), rgba(255, 0, 0, 0)); /* Red gradient */
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1), rgba(255, 0, 0, 0));
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease;
   animation: blink 1s infinite;
 }
 
-
 .nav-link:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
-  animation: none; /* Stop blinking when hovering */
+  animation: none;
 }
 
 @keyframes blink {
@@ -37,8 +113,6 @@
   50% { opacity: 1; }
   100% { opacity: 0; }
 }
-
-
 
 @keyframes gradient-animation {
   0% {
@@ -72,11 +146,10 @@
   background-color: white;
 }
 
-
 .card-cover {
-  background-size: cover; /* Ensure the image covers the card */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent repeating the image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .text-shadow-1 {
@@ -84,10 +157,9 @@
 }
 
 .card img {
-  max-width: 100%; /* Ensure the image does not overflow the card */
-  height: auto; /* Maintain the aspect ratio of the image */
+  max-width: 100%;
+  height: auto;
 }
-
 
 @media (max-width: 768px) {
   .header {
@@ -95,46 +167,31 @@
   }
   
   .card {
-    margin-bottom: 1rem; /* Space between cards on mobile */
+    margin-bottom: 1rem;
   }
 }
 
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Style for the success stories heading */
 .success-stories-heading {
-  color: #fff; /* White text color for contrast */
-  font-size: 3rem; /* Adjust font size as needed */
-  font-weight: bold; /* Bold text */
-  
-  text-align: center; /* Center align the heading */
-  margin: 20px 0; /* Adjust margin for spacing */
-  padding: 1rem; /* Add padding for spacing */
-  background: linear-gradient(300deg, #e01313, #0e0d0d, #1851cd); /* Gradient background */
-  -webkit-background-clip: text; /* Clip background to text */
-  -webkit-text-fill-color: transparent; /* Make text color transparent */
-  background-clip: text; /* Clip background to text for modern browsers */
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  padding: 1rem;
+  background: linear-gradient(300deg, #e01313, #0e0d0d, #1851cd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Features section with animated background */
 #features {
   background: linear-gradient(300deg, #4bbce1, #f5f2f2, #da8264);
-  background-size: 180% 180%; /* Allow the background to animate */
-  animation: gradient-animation 18s ease infinite; /* Apply the animation */
-  padding: 2rem; /* Add padding if needed */
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+  padding: 2rem;
+  margin-bottom: 40px; /* Increased space below */
 }
 
-/* General button styles */
 .btn {
   font-size: 1rem;
   line-height: 1.5;
@@ -142,105 +199,78 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  margin: 1rem 0; /* Spacing for buttons */
 }
 
-/* Light button styles */
 .btn-light {
   background-color: #f8f9fa;
   color: #333;
   border: 1px solid #ccc;
 }
 
-/* Outline button styles */
 .btn-outline-light {
   background-color: transparent;
   color: #f8f9fa;
   border: 1px solid #f8f9fa;
 }
 
-/* Link inside button */
 .btn a {
   color: inherit;
   text-decoration: none;
 }
 
-/* Hover and focus states for link inside button */
 .btn a:hover {
   color: #007bff;
   text-decoration: underline;
 }
 
 .btn a:focus {
-  outline: 2px solid #f8f9fa; /* Custom focus outline */
+  outline: 2px solid #f8f9fa;
   outline-offset: 2px;
   box-shadow: none;
 }
 
-/* SVG icon inside button */
 .btn svg {
   margin-right: 0.5rem;
   vertical-align: middle;
 }
 
-/* Example CSS for responsive logo */
 .header img {
   max-width: 100%;
   height: auto;
 }
 
-/* Adjust logo size for larger screens if needed */
 @media (min-width: 768px) {
   .header img {
-    width: 80px; /* Or any other size you prefer */
+    width: 80px;
     height: 80px;
-  }
-}
-
-
-
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
 
 .testimonial-section {
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
-  text-align: center; /* Center text */
-  padding: 40px; /* Padding for the section */
-  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
-  background-size: 180% 180%; /* Allow the background to animate */
-  animation: gradient-animation 18s ease infinite; /* Apply the animation */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow effect */
-  max-width: 100%; /* Maximum width for larger screens */
-  margin: auto; /* Center the section on the page */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px; /* Padding for better spacing */
+  margin: 20px 0; /* Space above and below the section */
+  background: linear-gradient();
+  background-size: 180%;
+  animation: gradient-animation 18s ease infinite;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .photo {
-  margin-top: 15px; /* Space between the quote and the photo */
-}
-
-.profile-img {
-  height: 100px; /* Profile image height */
-  border-radius: 50%; /* Circular image */
+  margin-top: 15px;
 }
 
 .im {
-  display: flex; /* Use flexbox for the logos */
-  justify-content: center; /* Center logos */
-  gap: 15px; /* Space between logos */
-  margin-top: 10px; /* Space above the logos */
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
 }
 
 .dogsimg {
@@ -252,7 +282,7 @@
   background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172) no-repeat center center;
   background-size: 180% 180%;
   animation: gradient-animation 30s ease infinite;
-  color: #fff; /* White text color for better contrast */
+  color: #fff;
   position: relative;
   overflow: hidden;
 }
@@ -264,9 +294,9 @@
 
 .content-wrapper {
   padding: 3rem 1.5rem;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
-  border-radius: 12px; /* Rounded corners for the content */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
@@ -276,20 +306,20 @@ h1 {
 }
 
 h3 {
-  font-size: 1.5rem; /* Adjust font size for subheading */
+  font-size: 1.5rem;
   font-weight: normal;
   margin-bottom: 2rem;
-  color: rgba(189, 212, 19, 0.9); /* Slightly muted color */
+  color: rgba(189, 212, 19, 0.9);
 }
 
 .icon-link {
   display: inline-flex;
   align-items: center;
-  color: #fff; /* White text color */
-  text-decoration: none; /* Remove underline */
+  color: #fff;
+  text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
-  border-radius: 0.375rem; /* Rounded corners for buttons */
+  border-radius: 0.375rem;
 }
 
 .icon-link svg {
@@ -297,7 +327,7 @@ h3 {
 }
 
 .btn-danger {
-  background-color: #007bff; /* Primary button color */
+  background-color: #007bff;
   border-color: #007bff;
 }
 
@@ -327,17 +357,15 @@ h3 {
 
 @keyframes gradient-animation {
   0% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
   50% {
-      background-position: 100% 50%;
+    background-position: 100% 50%;
   }
   100% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
 }
-
-
 
 
 
