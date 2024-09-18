@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+    <link href="./css/price.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        /* General Styles for the Header */
+        .header {
+            background-color: #ffffff; /* Light background for header */
+            border-bottom: 1px solid #e0e0e0; /* Subtle border color */
+        }
+        
+        .header .container {
+            padding: 1rem 2rem; /* Adjusted padding for better spacing */
+        }
+        
+        .header a {
+            color: #333; /* Dark text color for links */
+            text-decoration: none; /* Remove underline from links */
+            font-weight: 500; /* Slightly bolder text for links */
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+        
+        .header a:hover {
+            color: #ff4c68; /* Primary color on hover */
+        }
+        
+        /* Navigation link underline effect */
+        .nav-link {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem; /* Space for the underline */
+            color: #333; /* Dark text color for links */
+            text-decoration: none; /* Remove underline from links */
+            font-weight: 500; /* Slightly bolder text for better readability */
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px; /* Height of the underline */
+            background-color: #ff4c68; /* Primary color for the underline */
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        /* Pricing Header Styles */
+        .pricing-header {
+            padding: 3rem 1rem;
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent background for contrast */
+            border-radius: 8px; /* Rounded corners for a softer look */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            margin-bottom: 2rem; /* Space below the header */
+        }
+        
+        .pricing-header h1 {
+            color: #333; /* Dark text color for the main heading */
+            margin-bottom: 1rem; /* Space below the heading */
+        }
+        
+        .pricing-header p {
+            color: #6c757d; /* Secondary text color */
+            line-height: 1.6; /* Increased line height for better readability */
+        }
+        
+        /* General Body Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+        
+        /* Gradient Animation */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        /* Card Styles */
+        .card {
+            border-radius: 10px; /* Rounded corners for cards */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effect */
+        }
+        
+        .card:hover {
+            transform: translateY(-5px); /* Lift card on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+        }
+        
+        /* Table Styles */
+        .table th, .table td {
+            vertical-align: middle; /* Center align table content */
+        }
+        
+        .table thead th {
+            background-color: #f8f9fa; /* Light background for table headers */
+            font-weight: 600; /* Slightly bolder text for table headers */
+        }
+        
+        .table tbody tr:nth-child(odd) {
+            background-color: #f9f9f9; /* Zebra striping for rows */
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header .container {
+                padding: 1rem; /* Reduced padding on smaller screens */
+            }
+            
+            .header .pricing-header {
+                padding: 2rem 1rem; /* Adjusted padding for smaller screens */
+                border-radius: 4px; /* Slightly smaller border radius on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <header class="header">
+            <div class="container">
+                <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4">
+                    <a href="/" class="d-flex align-items-center text-decoration-none">
+                        <img src="./images/Pink Minimalist Love Dating App Logo.png" alt="Your Logo" width="60" height="60">
+                        
+                    </a>
+
+                    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                        <a class="nav-link me-3 py-2" href="#">Features</a>
+                        <a class="nav-link me-3 py-2" href="#">Enterprise</a>
+                        <a class="nav-link me-3 py-2" href="#">Support</a>
+                        <a class="nav-link py-2" href="#">Pricing</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    </section>
+
+    <main class="pricing-section">
+        <div class="pricing-header text-center">
+            <h1 class="display-4 fw-normal text-body-emphasis">Subscriptions</h1>
+            
+        </div>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Free</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>10 users included</li>
+                                <li>2 GB of storage</li>
+                                <li>Email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-danger">Sign up for free</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Pro</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>20 users included</li>
+                                <li>10 GB of storage</li>
+                                <li>Priority email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-danger">Get started</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-danger">
+                        <div class="card-header py-3 text-bg-danger border-danger">
+                            <h4 class="my-0 fw-normal">Enterprise</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>30 users included</li>
+                                <li>15 GB of storage</li>
+                                <li>Phone and email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-danger">Contact us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="display-6 text-center mb-4">Compare plans</h2>
+
+            <div class="table-responsive">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th style="width: 34%;"></th>
+                            <th style="width: 22%;">Free</th>
+                            <th style="width: 22%;">Pro</th>
+                            <th style="width: 22%;">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <th scope="row" class="text-start">Public</th>
+                          <td><svg class="bi" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M6.293 9.293a1 1 0 0 1 1.414 0L12 11.586 13.707 9.879a1 1 0 0 1 1.415 1.414l-2 2a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l1.586-1.586z"/>
+                          </svg></td>
+                          <td><svg class="bi" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M6.293 9.293a1 1 0 0 1 1.414 0L12 11.586 13.707 9.879a1 1 0 0 1 1.415 1.414l-2 2a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l1.586-1.586z"/>
+                          </svg></td>
+                          <td><svg class="bi" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M6.293 9.293a1 1 0 0 1 1.414 0L12 11.586 13.707 9.879a1 1 0 0 1 1.415 1.414l-2 2a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l1.586-1.586z"/>
+                          </svg></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-start">Private</th>
+                          <td></td>
+                          <td><svg class="bi" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M6.293 9.293a1 1 0 0 1 1.414 0L12 11.586 13.707 9.879a1 1 0 0 1 1.415 1.414l-2 2a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l1.586-1.586z"/>
+                          </svg></td>
+                          <td><svg class="bi" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M6.293 9.293a1 1 0 0 1 1.414 0L12 11.586 13.707 9.879a1 1 0 0 1 1.415 1.414l-2 2a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l1.586-1.586z"/>
+                          </svg></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-start">Permissions</th>
+                          <td><svg class="bi" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M6.293 9.293a1 1 0 0 1 1.414 0L12 11.586 13.707 9.879a1 1 0 0 1 1.415 1.414l-2 2a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l1.586-1.586z"/>
+                          </svg></td>
+                          <td><svg class="bi" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M6.293 9.293a1 1 0 0 1 1.414 0L12 11.586 13.707 9.879a1 1 0 0 1 1.415 1.414l-2 2a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l1.586-1.586z"/>
+                          </svg></td>
+                          <td><svg class="bi" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M6.293 9.293a1 1 0 0 1 1.414 0L12 11.586 13.707 9.879a1 1 0 0 1 1.415 1.414l-2 2a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l1.586-1.586z"/>
+                          </svg></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-start">Sharing</th>
+                          <td></td>
+                          <td><svg class="bi" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M6.293 9.293a1 1 0 0 1 1.414 0L12 11.586 13.707 9.879a1 1 0 0 1 1.415 1.414l-2 2a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l1.586-1.586z"/>
+                          </svg></td>
+                          <td><svg class="bi" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M6.293 9.293a1 1 0 0 1 1.414 0L12 11.586 13.707 9.879a1 1 0 0 1 1.415 1.414l-2 2a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l1.586-1.586z"/>
+                          </svg></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-start">Unlimited members</th>
+                          <td></td>
+                          <td><svg class="bi" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M6.293 9.293a1 1 0 0 1 1.414 0L12 11.586 13.707 9.879a1 1 0 0 1 1.415 1.414l-2 2a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l1.586-1.586z"/>
+                          </svg></td>
+                          <td><svg class="bi" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M6.293 9.293a1 1 0 0 1 1.414 0L12 11.586 13.707 9.879a1 1 0 0 1 1.415 1.414l-2 2a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l1.586-1.586z"/>
+                          </svg></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-start">Extra security</th>
+                          <td></td>
+                          <td></td>
+                          <td><svg class="bi" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M6.293 9.293a1 1 0 0 1 1.414 0L12 11.586 13.707 9.879a1 1 0 0 1 1.415 1.414l-2 2a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l1.586-1.586z"/>
+                          </svg></td>
+                        </tr>
+                      </tbody>
+                      
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-rbsA4f5B5xA6qZ7F6/fPQcOkeF5T6Kc6d6o5kk5sJoEw3urFj6b2S1KnPj/WX4P"
+            crossorigin="anonymous"></script>
+</body>
+</html>
