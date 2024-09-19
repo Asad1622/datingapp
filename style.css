@@ -1,57 +1,95 @@
-body {
-  font-family: Arial, sans-serif;
-}
-
 .gradient-background {
-  width: 100%;
-  height: 100%;
-  background: #BE1E2D;
-  overflow: hidden;
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
 }
-
 .heart {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  
   opacity: 0;
   animation-name: radiate;
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  animation-direction: normal;
   animation-fill-mode: backwards;
-}
-
-.heart path {
+  path {
   fill: #fff;
+  }
 }
 
-.heart:nth-child(1) { animation-delay: -1s; }
-.heart:nth-child(2) { animation-delay: -2s; }
-.heart:nth-child(3) { animation-delay: -3s; }
-.heart:nth-child(4) { animation-delay: -4s; }
-.heart:nth-child(5) { animation-delay: -5s; }
+
+.heart:nth-child(1) {
+  animation-delay: -1s;
+}
+.heart:nth-child(2) {
+  animation-delay: -2s;
+}
+.heart:nth-child(3) {
+  animation-delay: -3s;
+}
+.heart:nth-child(4) {
+  animation-delay: -4s;
+}
+.heart:nth-child(5) {
+  animation-delay: -5s;
+}
 
 @keyframes radiate {
-  0% { opacity: 0; transform: scale(0); }
-  1% { opacity: 0.15; }
-  100% { opacity: 0; transform: scale(2); }
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  1% {
+    opacity: 0.15;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
 }
 
-@keyframes x {
-  0% { transform: scale(1); }
-  10% { transform: scale(0.95); }
-  40% { transform: scale(1); }
-  60% { transform: scale(0.95); }
-  80% { transform: scale(1); }
-  100% { transform: scale(1); }
+/* Container for header */
+.container {
+  padding: 0 15px;
+}
+
+/* Header styling */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Logo styling */
+header img {
+  height: 80px;
+  width: 70px;
+}
+
+/* Navigation styles */
+.nav {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-link {
   position: relative;
   display: inline-block;
-  color: #333;
+  color: #000; /* Black text color */
   text-decoration: none;
   padding: 0.5rem 1rem;
 }
@@ -82,13 +120,56 @@ body {
   100% { opacity: 0; }
 }
 
-@keyframes gradient-animation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Button styles */
+.btn {
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
 }
 
-.icon-square {
+.btn-outline-danger {
+  background-color: transparent;
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Text alignment and spacing */
+.col-md-3.text-end {
+  text-align: right;
+}
+
+
+@keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.icon-squar {
   width: 3rem;
   height: 3rem;
   border-radius: 0.75rem;
@@ -108,10 +189,11 @@ body {
   background-color: white;
 }
 
+
 .card-cover {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: cover; /* Ensure the image covers the card */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
 }
 
 .text-shadow-1 {
@@ -119,41 +201,57 @@ body {
 }
 
 .card img {
-  max-width: 100%;
-  height: auto;
+  max-width: 100%; /* Ensure the image does not overflow the card */
+  height: auto; /* Maintain the aspect ratio of the image */
 }
+
 
 @media (max-width: 768px) {
   .header {
-      padding: 5px 10px;
+    padding: 15px;
   }
   
   .card {
-      margin-bottom: 1rem;
+    margin-bottom: 1rem; /* Space between cards on mobile */
   }
 }
 
-.success-stories-heading {
-  color: #fff;
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-  margin: 20px 0;
-  padding: 1rem;
-  background: linear-gradient(300deg, #e01313, #0e0d0d, #1851cd);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
+/* Style for the success stories heading */
+.success-stories-heading {
+  color: #fff; /* White text color for contrast */
+  font-size: 3rem; /* Adjust font size as needed */
+  font-weight: bold; /* Bold text */
+  
+  text-align: center; /* Center align the heading */
+  margin: 20px 0; /* Adjust margin for spacing */
+  padding: 1rem; /* Add padding for spacing */
+  background: linear-gradient(300deg, #e01313, #0e0d0d, #1851cd); /* Gradient background */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text color transparent */
+  background-clip: text; /* Clip background to text for modern browsers */
+}
+
+/* Features section with animated background */
 #features {
   background: linear-gradient(300deg, #4bbce1, #f5f2f2, #da8264);
-  background-size: 180% 180%;
-  animation: gradient-animation 18s ease infinite;
-  padding: 2rem;
-  margin-bottom: 40px; /* Increased space below */
+  background-size: 180% 180%; /* Allow the background to animate */
+  animation: gradient-animation 18s ease infinite; /* Apply the animation */
+  padding: 2rem; /* Add padding if needed */
 }
 
+/* General button styles */
 .btn {
   font-size: 1rem;
   line-height: 1.5;
@@ -161,78 +259,105 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0; /* Spacing for buttons */
 }
 
+/* Light button styles */
 .btn-light {
   background-color: #f8f9fa;
   color: #333;
   border: 1px solid #ccc;
 }
 
+/* Outline button styles */
 .btn-outline-light {
   background-color: transparent;
   color: #f8f9fa;
   border: 1px solid #f8f9fa;
 }
 
+/* Link inside button */
 .btn a {
   color: inherit;
   text-decoration: none;
 }
 
+/* Hover and focus states for link inside button */
 .btn a:hover {
   color: #007bff;
   text-decoration: underline;
 }
 
 .btn a:focus {
-  outline: 2px solid #f8f9fa;
+  outline: 2px solid #f8f9fa; /* Custom focus outline */
   outline-offset: 2px;
   box-shadow: none;
 }
 
+/* SVG icon inside button */
 .btn svg {
   margin-right: 0.5rem;
   vertical-align: middle;
 }
 
+/* Example CSS for responsive logo */
 .header img {
   max-width: 100%;
   height: auto;
 }
 
+/* Adjust logo size for larger screens if needed */
 @media (min-width: 768px) {
   .header img {
-      width: 80px;
-      height: 80px;
+    width: 80px; /* Or any other size you prefer */
+    height: 80px;
+  }
+}
+
+
+
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
 .testimonial-section {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px; /* Padding for better spacing */
-  margin: 20px 0; /* Space above and below the section */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  text-align: center; /* Center text */
+  padding: 40px; /* Padding for the section */
   background: linear-gradient();
-  background-size: 180%;
-  animation: gradient-animation 18s ease infinite;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-size: 180% 180%; /* Allow the background to animate */
+  animation: gradient-animation 18s ease infinite; /* Apply the animation */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  max-width: 100%; /* Maximum width for larger screens */
+  margin: auto; /* Center the section on the page */
 }
 
 .photo {
-  margin-top: 15px;
+  margin-top: 15px; /* Space between the quote and the photo */
+}
+
+.profile-img {
+  height: 100px; /* Profile image height */
+  border-radius: 50%; /* Circular image */
 }
 
 .im {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
+  display: flex; /* Use flexbox for the logos */
+  justify-content: center; /* Center logos */
+  gap: 15px; /* Space between logos */
+  margin-top: 10px; /* Space above the logos */
 }
 
 .dogsimg {
@@ -244,7 +369,7 @@ body {
   background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172) no-repeat center center;
   background-size: 180% 180%;
   animation: gradient-animation 30s ease infinite;
-  color: #fff;
+  color: #fff; /* White text color for better contrast */
   position: relative;
   overflow: hidden;
 }
@@ -256,148 +381,20 @@ body {
 
 .content-wrapper {
   padding: 3rem 1.5rem;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-  font-weight: normal;
-  margin-bottom: 2rem;
-  color: rgba(189, 212, 19, 0.9);
-}
-
-.icon-link {
-  display: inline-flex;
-  align-items: center;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  border-radius: 0.375rem;
-}
-
-.icon-link svg {
-  vertical-align: middle;
-}
-
-.btn-danger {
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-.btn-outline-danger {
-  border-color: #f8f9fa;
-  color: #f8f9fa;
-}
-
-.product-device,
-.product-device-2 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-size: cover;
-}
-
-.product-device {
-  background: url('./images/product-device.png') no-repeat center center;
-}
-
-.product-device-2 {
-  background: url('./images/product-device-2.png') no-repeat center center;
-}
-
-@keyframes gradient-animation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+  border-radius: 12px; /* Rounded corners for the content */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
 }
 
 
 
-
-
-
-
-.hamburger {
-  display: block; /* Show hamburger icon */
-  cursor: pointer;
-  font-size: 24px;
-  color: #333;
+/* Make all nav-link text black */
+.nav-link {
+  color: #000000 !important; /* Black text color with !important to override defaults */
 }
 
-.mobile-menu {
-  display: none; /* Hide by default */
-  position: absolute;
-  top: 60px; /* Adjust based on your header height */
-  left: 0;
-  right: 0;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 999;
+.nav-link:hover {
+  color: #333333 !important; /* Darker black on hover with !important */
 }
-
-.mobile-menu.show {
-  display: block; /* Show when toggled */
-}
-
-/* Ensure mobile menu items have padding */
-.mobile-menu .nav {
-  flex-direction: column; /* Stack items vertically */
-  padding: 10px 0; /* Padding around items */
-}
-
-.mobile-menu .nav-link {
-  padding: 10px 20px; /* Spacing for each link */
-}
-
-/* Adjust the hamburger icon visibility */
-@media (min-width: 768px) {
-  .hamburger {
-    display: none; /* Hide hamburger on desktop */
-  }
-  
-  .mobile-menu {
-    display: none; /* Hide mobile menu on larger screens */
-  }
-}
-
-
-.header {
-  display: flex;
-  align-items: center; /* Vertically center items */
-  justify-content: space-between; /* Space between items */
-  padding: 10px 15px;
-  background-color: transparent; /* Make header background transparent */
-  position: absolute; /* Overlay it on top of content */
-  width: 100%; /* Ensure header spans the full width */
-  z-index: 1000; /* Keep header above other content */
-  color: #fff; /* Set text color to white for visibility */
-}
-
-@media (max-width: 768px) {
-  .header {
-    padding: 5px 10px; /* Reduce padding for smaller screens */
-  }
-}
-
-/* Additional Section Title Styles */
-.section-title {
-  color: #fff; /* Ensure section title has the same color as header text */
-  font-size: 2rem;
-  text-align: center;
-  margin: 20px 0;
-}
-
 
 
